@@ -18,7 +18,7 @@ const EditFood = ({ id: id }: { id: string }) => {
     };
     console.log(productData);
     // Replace with your actual API endpoint
-    fetch(`http://localhost:5000/api/food/${id}`, {
+    fetch(`https://food-api-sigma.vercel.app/api/food/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(productData),

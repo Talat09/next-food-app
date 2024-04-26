@@ -9,6 +9,7 @@ export default function Home() {
       <h1 className="text-4xl font-bold text-center my-6">
         Welcome to Food APP!
       </h1>
+
       <GetAllFood />
     </main>
   );

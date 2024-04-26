@@ -12,9 +12,9 @@ interface Food {
 
 const GetAllFood: React.FC = () => {
   const [foods, setFoods] = useState<Food[]>([]);
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:5000/api/foods")
+    fetch("https://food-api-sigma.vercel.app/api/foods")
       .then((res) => res.json())
       .then((data: Food[]) => {
         setFoods(data);
@@ -28,12 +28,14 @@ const GetAllFood: React.FC = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/foods/${foodId}`,
+        `https://food-api-sigma.vercel.app/api/foods/${foodId}`,
         {
           method: "DELETE",
         }
       );
-
+      if (loading) {
+        return setLoading(true);
+      }
       if (response.ok) {
         console.log("Food deleted successfully!");
         // Update the local state to reflect the deletion

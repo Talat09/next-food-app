@@ -16,7 +16,7 @@ const AddFoodForm = () => {
     };
     console.log(productData);
     // Replace with your actual API endpoint
-    fetch("http://localhost:5000/api/food", {
+    fetch("https://food-api-sigma.vercel.app/api/food", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(productData),
