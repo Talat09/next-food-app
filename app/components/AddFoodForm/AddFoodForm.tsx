@@ -6,7 +6,7 @@ const AddFoodForm = () => {
   const [description, setDescription] = useState("");
   const [imageurl, setImageurl] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
 
     const productData = {

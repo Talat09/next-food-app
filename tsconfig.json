@@ -26,7 +26,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/components/AddFoodForm/AddFoodForm.jsx"
+    "app/components/AddFoodForm/AddFoodForm.tsx",
+    "app/components/EditFood/EditFood.tsx"
   ],
   "exclude": ["node_modules"]
 }
