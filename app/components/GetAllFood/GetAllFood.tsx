@@ -1,8 +1,10 @@
 "use client";
+import { setFoods } from "@/app/redux/actions";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
 interface Food {
   _id: string;
   name: string;
@@ -11,18 +13,21 @@ interface Food {
 }
 
 const GetAllFood: React.FC = () => {
-  const [foods, setFoods] = useState<Food[]>([]);
+  // const [foods, setFoods] = useState<Food[]>([]);
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const foods = useSelector((state: any) => state.food.foods);
   useEffect(() => {
     fetch("https://food-api-sigma.vercel.app/api/foods")
       .then((res) => res.json())
       .then((data: Food[]) => {
-        setFoods(data);
+        // setFoods(data);
+        dispatch(setFoods(data));
       })
       .catch((error) => {
         console.error("Error fetching foods:", error);
       });
-  }, []);
+  }, [dispatch]);
   const handleDelete = async (foodId: string) => {
     console.log(foodId);
 
