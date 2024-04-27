@@ -2,35 +2,26 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+## Answer To The Question 2
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Firstly Iterate Through Menu Collections:
+  Begin by iterating through each object in the dummyArr array, representing each Menu collection.
+- Secondly Iterate Through Categories:
+  Within each Menu collection, iterate through the category array to access each category object.
+- Thirdly Match IDs with Menu Items:
+  For each category, compare the IDs in the menuItems array of the category object with the IDs of menu items in the menuItems array of the Menu collection. When an ID match is found, add the corresponding menu item to the respective category.
+- Fourthly Create a Data Structure:
+  You can create a new data structure to store the categorized items.
+
+```
+const categorizedItems = {
+"Starters": [],
+"Main Course": [],
+
+};
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Populate Categorized Items:
+  As you iterate through each Menu collection and category, add the matched menu items to the appropriate category in the categorizedItems data structure.
+- And Finally:
+  Once you have iterated through all Menu collections and categories, the categorizedItems data structure will contain the specific items that belong to each category based on the matching IDs.
